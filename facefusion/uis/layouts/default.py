@@ -109,5 +109,9 @@ def listen() -> None:
 	common_options.listen()
 
 
-def run(ui : gradio.Blocks) -> None:
-	ui.launch(favicon_path = 'facefusion.ico', inbrowser = state_manager.get_item('open_browser'))
+def run(ui: gradio.Blocks) -> None:
+    ui.launch(
+        favicon_path="facefusion.ico",
+        share=state_manager.get_item("open_browser"),  # share=True jika state_manager.get_item("open_browser") bernilai True
+        quiet=True
+    )
